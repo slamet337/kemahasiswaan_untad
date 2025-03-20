@@ -1,1 +1,2 @@
-# CRUD Data Mahasiswa dengan CodeIgniter3
+# CRUD Data Kemahasiswaan Untad dengan CodeIgniter3
+# versi model simkatmawa
