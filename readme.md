@@ -1,1 +1,0 @@
-# CRUD Data Mahasiswa dengan CodeIgniter3
