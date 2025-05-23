@@ -60,7 +60,7 @@ class Welcome extends CI_Controller {
   }
   public function beranda()
   {
-    $data['title'] = 'Beranda Kampus';
+    $data['title'] = 'Dashboard';
     $data['mahasiswa_rows'] = $this->mahasiswa->rows_count();
     $data['jurusan_rows'] = $this->jurusan->rows_count();
     $data['prodi_rows'] = $this->prodi->rows_count();
@@ -94,6 +94,7 @@ class Welcome extends CI_Controller {
     $this->load->view('home/bem', $data);
     $this->load->view('home/template/footer');
   }
+
   public function beritaa()
   {
     $data['title'] = 'Berita Terbaru';

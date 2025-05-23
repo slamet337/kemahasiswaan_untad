@@ -57,7 +57,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <a class="btn btn-primary m-1" href="<?= base_url('bemi/edit/' . $row->nim) ?>">
                           <i class="fas fa-pen"></i>
                         </a>
-                        <a class="btn btn-danger m-1 delete-btn" href="#">
+                        <a class="btn btn-danger m-1 delete-btn" href="<?= base_url('bemi/delete/' . $row->nim) ?>">
                           <i class="fas fa-trash"></i>
                         </a>
                         <a class="btn btn-info m-1" data-toggle="modal" data-target="#viewModal<?= $row->nim ?>">

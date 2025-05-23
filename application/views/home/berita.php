@@ -48,7 +48,7 @@
             </div>
             <div class="card-footer bg-white border-top-0">
               <div class="d-flex align-items-center">
-                <img src="<?= base_url('assets/img/user.png') ?>" width="30" class="rounded-circle me-2">
+                <img src="<?= base_url('uploads/bem/1745530322_asasa.png') ?>" width="70" class="rounded-circle me-2">
                 <div>
                   <small class="text-muted">@admin</small><br>
                   <small class="text-muted"><?= date('F j, Y', strtotime($b->tgl)) ?></small>

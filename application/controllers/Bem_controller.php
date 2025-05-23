@@ -37,9 +37,9 @@ class Bem_controller extends CI_Controller
         $this->load->view('theme/footer');
     }
 
-    public function show($id)
+    public function show($nim)
     {
-        $data['bem'] = $this->bem->find_bem($id);
+        $data['bem'] = $this->bem->find_bem($nim);
 
         $this->load->view('theme/header');
         $this->load->view('bem/list', $data);
@@ -77,9 +77,9 @@ class Bem_controller extends CI_Controller
         $this->session->set_flashdata('success', 'Data Bem berhasil ditambahkan!');
         redirect(base_url('bemi'));
     }   
-    public function edit($id)
+    public function edit($nim)
     {
-        $data['bem'] = $this->bem->find_bem($id);
+        $data['bem'] = $this->bem->find_bem($nim);
         $data['title'] = 'Edit Data BEM';
     
         $this->load->view('theme/header', $data);
@@ -87,7 +87,7 @@ class Bem_controller extends CI_Controller
         $this->load->view('theme/footer');
     }
 
-    public function update($id)
+    public function update($nim)
     {
         $this->load->library('upload');
         
@@ -115,15 +115,32 @@ class Bem_controller extends CI_Controller
             'jabatan' => $this->input->post('jabatan'),
             'foto' => $foto,
         );
-        $this->db->update('tb_bem',$data, ['id' => $id]);
+        $this->db->update('tb_bem',$data, ['nim' => $nim]);
         $this->session->set_flashdata('success', 'Data Bem berhasil diubah!');
-        redirect(base_url('bem'));
+        redirect(base_url('bemi'));
     }
 
-    public function delete($id)
+    public function delete($nim)
     {
-        $this->db->delete('tb_bem', ['id' => $id]);
+        $this->db->delete('tb_bem', ['nim' => $nim]);
         $this->session->set_flashdata('success', 'Data Bem berhasil dihapus!');
-        redirect(base_url('bem'));
+        redirect(base_url('bemi'));
     }
+    public function detail($nim)
+  {
+    // $data['bem'] = $this->bem->get_by_nim($nim);
+    $data['bem'] = $this->bem->find_bem($nim);
+    $data['title'] = 'Detail Presiden Mahasiswa';
+    // print_r($data['bem']);
+    if (!$data['bem']) {
+        show_404(); 
+    }
+        
+    $this->load->view('home/template/header', $data);
+    $this->load->view('home/template/sidebar');
+    $this->load->view('bem/detail', $data);
+    $this->load->view('home/template/footer');
+  }
+
+
 }

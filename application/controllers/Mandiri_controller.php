@@ -33,21 +33,10 @@ class Mandiri_controller extends CI_Controller
     // $this->load->view('mhs/list', $data);
     $this->load->view('theme/footer');
   }
-
-//   public function show($id)
-//   {
-//     $data['mhs'] = $this->mhs->find_mhs($id);
-//     $data['kegiatan'] = $this->kegiatan->get_all();
-    
-//     $this->load->view('theme/header');
-//     $this->load->view('mhs/show', $data);
-//     $this->load->view('theme/footer');
-//   }
-
   public function create()
   {
     $data['kegiatan'] = $this->kegiatan->get_all();
-    $data['mahasiswa'] = $this->mahasiswa->get_all();
+    // $data['mahasiswa'] = $this->mahasiswa->get_all();
     $data['title'] = 'Input Data Prestasi';
         
     $this->load->view('theme/header', $data);
@@ -56,7 +45,7 @@ class Mandiri_controller extends CI_Controller
   }
 
   public function store()
-{
+  {
     $this->load->library('upload');
 
     // Konfigurasi Upload

@@ -134,4 +134,20 @@ class Berita_controller extends CI_Controller
         $this->session->set_flashdata('success', 'Data Berita berhasil dihapus!');
         redirect(base_url('berita'));
     }
+
+    public function detail($id)
+  {
+    // $data['bem'] = $this->bem->get_by_nim($nim);
+    $data['berita'] = $this->berita->find_berita($id);
+    $data['title'] = 'Detail Data Berita';
+    // print_r($data['bem']);
+    if (!$data['berita']) {
+        show_404(); 
+    }
+        
+    $this->load->view('home/template/header', $data);
+    $this->load->view('home/template/sidebar');
+    $this->load->view('berita/detail', $data);
+    $this->load->view('home/template/footer');
+  }
 }

@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome/beranda';
-$route['dashboard'] = 'welcome';
+$route['dashboard'] = 'welcome/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -58,19 +58,25 @@ $route['prestasi'] = 'welcome/prestasi';
 $route['bem'] = 'welcome/bem';
 $route['beritaa'] = 'welcome/beritaa';
 
+// $route['detail/(:any)'] = 'Welcome/detail/$1';
+
 $route['berita'] = 'Berita_controller';
 $route['berita/create'] = 'Berita_controller/create';
 $route['berita/create/action']['post'] = 'Berita_controller/store';
 $route['berita/edit/(:any)'] = 'Berita_controller/edit/$1';
 $route['berita/update/(:any)']['post'] = 'Berita_controller/update/$1';
 $route['berita/delete/(:any)']['delete'] = 'Berita_controller/delete/$1';
+$route['berita/detail/(:any)'] = 'Berita_controller/detail/$1';
 
 $route['bemi'] = 'Bem_controller';
 $route['bemi/create'] = 'Bem_controller/create';
 $route['bemi/create/action']['post'] = 'Bem_controller/store';
 $route['bemi/edit/(:any)'] = 'Bem_controller/edit/$1';
 $route['bemi/update/(:any)']['post'] = 'Bem_controller/update/$1';
-$route['bemi/delete/(:any)']['delete'] = 'Bem_controller/delete/$1';
+$route['bemi/delete/(:any)'] = 'Bem_controller/delete/$1';
+// $route['bemi/detail/(:any)']['post'] = 'Bem_controller/detail/$1';
+$route['bem/detail/(:any)'] = 'Bem_controller/detail/$1';
+
 $route['bemi/anggota'] = 'Bem_controller/anggota';
 $route['bemi/anggota/create'] = 'Bem_controller/create_anggota';
 $route['bemi/anggota/create/action']['post'] = 'Bem_controller/store_anggota';
@@ -88,6 +94,7 @@ $route['mahasiswa/delete/(:any)']['delete'] = "Mahasiswa_controller/delete/$1";
 $route['mandiri'] = 'Mandiri_controller';
 $route['mandiri/create'] = "Mandiri_controller/create";
 $route['mandiri/create/action']['post'] = "Mandiri_controller/store";
+// $route['pkkmb/input/action']['post'] = "Mandiri_controller/store";
 
 $route['jurusan'] = 'Jurusan_controller';
 $route['jurusan/create'] = "Jurusan_controller/create";
@@ -133,3 +140,21 @@ $route['login/register/action']['post'] = 'login_controller/register';
 $route['reset'] = 'Reset_controller'; 
 $route['reset/search'] = 'Reset_controller/index'; 
 $route['reset/reset_password/(:num)'] = 'Reset_controller/reset_password/$1'; 
+
+$route['sk'] = 'Sk_controller';
+$route['sk/create'] = "Sk_controller/create";
+$route['sk/create/action']['post'] = "Sk_controller/store";
+$route['sk/edit/(:any)'] = "Sk_controller/edit/$1";
+$route['sk/update/(:any)']['post'] = "Sk_controller/update/$1";
+$route['sk/delete/(:any)']['delete'] = "Sk_controller/delete/$1";
+$route['sk/download/(:any)'] = "Sk_controller/download/$1";
+
+$route['pkkmb'] = 'Pkkmb_controller';
+$route['pkkmb/mhs'] = "Pkkmb_controller/create";
+$route['pkkmb/mhs/action']['post'] = "Pkkmb_controller/store";
+$route['pkkmb/edit/(:any)'] = "Pkkmb_controller/edit/$1";
+$route['pkkmb/update/(:any)']['post'] = "Pkkmb_controller/update/$1";
+$route['pkkmb/delete/(:any)']['delete'] = "Pkkmb_controller/delete/$1";
+$route['pkkmb/download/(:any)'] = "Pkkmb_controller/download/$1";
+$route['report/word/(:any)'] = "Report_controller/word/$1";
+// $route['pkkmb/mhs'] = "Pkkmb_controller/mhs";

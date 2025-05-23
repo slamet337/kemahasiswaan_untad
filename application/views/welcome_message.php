@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <p>Jurusan</p>
           </div>
           <div class="icon">
-            <i class="fas fa-list"></i>
+            <i class="fas fa-building"></i>
           </div>
           <!-- <a href="<?= base_url('jurusan')?>" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a> -->
         </div>
@@ -71,16 +71,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <p>Fakultas</p>
           </div>
           <div class="icon">
-            <i class="fas fa-list"></i>
+            <i class="fas fa-university"></i>
           </div>
-          <!-- <a href="<?= base_url('fakultas')?>" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a> -->
+          
         </div>
       </div>
-
+       <div class="col-lg-3 col-6">
+            <img src="assets/images1/logo.png" alt="">
       </div>
-      <!-- ./col -->
     </div>
-    <!-- /.row (main row) -->
-  </div><!-- /.container-fluid -->
+  </div>
+</div><!-- /.container-fluid -->
 </section>
+
+      <!-- ./col -->
+    <!-- /.row (main row) -->
+  
+
 <!-- /.content -->

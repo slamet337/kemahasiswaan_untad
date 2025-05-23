@@ -11,12 +11,12 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="assets/img/YAKUZA.png" type="">
+  <link rel="shortcut icon" href="<?= base_url('assets/img/YAKUZA.png')?>" type="">
 
   <title><?= $title; ?></title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="assets/css1/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css1/bootstrap.css') ?>" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" 
@@ -27,12 +27,12 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
-  <link href="assets/css1/font-awesome.min.css" rel="stylesheet" />
+  <link href="<?= base_url('assets/css1/font-awesome.min.css') ?>" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="assets/css1/style.css" rel="stylesheet" />
+  <link href="<?= base_url('assets/css1/style.css') ?>" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="assets/css1/responsive.css" rel="stylesheet" />
+  <link href="<?= base_url('assets/css1/responsive.css') ?>" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 
@@ -70,24 +70,40 @@ nav ul li a {
     color: #fff;
  
 }
+
+.navbar-nav .nav-link {
+  font-size: 20px; }
  
 .dropdown-menu {
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(24, 0, 245, 0.06);
 }
 .dropdown-item:hover {
-  background-color: #f0f0f0;
-  color: #007bff;
+  background-color:rgba(9, 5, 231, 0.34);
+  color:rgb(8, 0, 255);
 }
 
+.dropdown-item:active {
+  background-color:rgba(9, 5, 231, 0.34);
+  color:rgb(8, 0, 255);
+}
+.dropdown-item {
+  font-size: 20px !important; 
+}
+
+.h3{
+  background-color: #fff;
+}
   .progress {
-    background-color: #e0e0e0;
-    border-radius: 5px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 30px;
   }
 
   .progress-bar {
-    font-size: 14px;
+    font-size: 30px;
   }
+
+  
 
 
 </style>
@@ -97,16 +113,17 @@ nav ul li a {
 
     <div class="hero_bg_box">
       <div class="bg_img_box">
-        <img src="assets/images1/hero-bg.png" alt="">
+        <img src="<?= base_url('assets/images1/hero-bg.png') ?>" alt="">
       </div>
     </div>
 
     <!-- header section strats -->
     <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <div class="container-md">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="">
             <span>
+              <img src="<?= base_url('assets/img/logo.png') ?>" alt="" width="50px" height="50px">
               Kemahasiswaan
             </span>
           </a>

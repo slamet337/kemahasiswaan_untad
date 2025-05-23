@@ -46,15 +46,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               ?>
 
               <div class="form-group">
-                <label for="nim">NIM</label>
-                <select name="nim" class="form-control select-nim" style="width: 100%;">
-                  <option></option>
-                  <?php foreach ($mahasiswa as $t) { ?>
-                    <option value="<?= $t->nim ?>" <?= ($t->nim == set_value('nim')) ? 
-                    'selected="selected"' : ''; ?> >(<?= $t->nim ?>) <?= $t->nama ?></option>
-                  <?php } ?>
-                </select>
-                <p class="help-block" colour="" >*jika tidak ada nim dan stambuk silahkan hubungi admin kemahaiswaan</p>
+                <input type="text" class="form-control" name="nim" value="<?= $this->session->userdata('nim'); ?>" readonly>
               </div>
               <div class="form-group">
                 <label for="kegiatan_id">Kegiatan</label>

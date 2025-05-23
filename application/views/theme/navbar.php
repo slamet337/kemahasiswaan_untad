@@ -19,9 +19,9 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-no-expand">
   <!-- Brand Logo -->
-  <a href="<?= base_url() ?>" class="brand-link">
-    <img src="<?= base_url() ?>assets/img/YAKUZA.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <?php echo $this->session->userdata('username'); ?>
+  <a href="<?= base_url('welcome') ?>" class="brand-link">
+    <img src="<?= base_url('') ?>assets/img/logo.png" class="brand-image img-circle elevation-6" style="opacity: .8" sizes="700px" data-toggle="tooltip" title="Logo">
+    <br><?php echo $this->session->userdata('nama'); ?>
   </a>
 
   <!-- Sidebar -->
@@ -46,7 +46,7 @@
         <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
         <li class="nav-item">
-          <a href="<?= base_url() ?>" class="nav-link <?= ($this->uri->segment(1) == '') ? 'active' : '' ?>">
+          <a href="<?= base_url('dashboard') ?>" class="nav-link <?= ($this->uri->segment(1) == '') ? 'active' : '' ?>">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -103,6 +103,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="<?= base_url('pkkmb') ?>" class="nav-link <?= ($this->uri->segment(1) == 'pkkmb') ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+              Surat Keterangan
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
             <a href="<?= base_url('bemi') ?>" class="nav-link <?= ($this->uri->segment(1) == 'bem') ? 'active' : '' ?>">
               <i class="nav-icon fas fa-table"></i>
               <p>data BEM</p>
@@ -115,6 +123,13 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="<?= base_url('sk') ?>" class="nav-link <?= ($this->uri->segment(1) == 'sk') ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-info-circle"></i>
+              <p>Upload SK</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a href="<?= base_url('reset') ?>" class="nav-link <?= ($this->uri->segment(1) == 'reset') ? 'active' : '' ?>">
               <i class="nav-icon fas fa-key"></i>
               <p>Reset Password</p>
@@ -126,17 +141,24 @@
               <i class="fas fa-plus mr-1"></i>
               Tambah Data Baru
             </a>
+          </li>
         <?php endif; ?>
         
         <?php if ($this->session->userdata('role') == 'mahasiswa'): ?>
-  <li class="nav-item">
-    <a href="<?= base_url('mandiri/create') ?>" class="nav-link">
-      <i class="nav-icon fas fa-solid fa-plus"></i>
-      <p>Tambah Data</p>
-    </a>
-  </li>
-<?php endif; ?>
-
+          <li class="nav-item">
+            <a href="<?= base_url('mandiri/create') ?>" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-plus"></i>
+              <p>prestasi</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('pkkmb/mhs') ?>" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-plus"></i>
+              <p>SK pengganti PKKMB</p>
+            </a>
+          </li>
+        <?php endif; ?>
+          
 
         <li class="nav-item">
           <a href="<?= base_url('auth/logout') ?>" class="nav-link">
